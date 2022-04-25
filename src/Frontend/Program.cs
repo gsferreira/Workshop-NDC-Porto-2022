@@ -5,10 +5,11 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
+var ingredientsUri = builder.Configuration.GetServiceUri("ingredients") ?? new Uri("https://localhost:7105");
 builder.Services.AddGrpcClient<ingredientsService.ingredientsServiceClient>(
     options =>
     {
-        options.Address = new Uri("https://localhost:7105");
+        options.Address = ingredientsUri;
     });
 
 var app = builder.Build();

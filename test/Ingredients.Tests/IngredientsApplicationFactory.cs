@@ -28,8 +28,8 @@ public class IngredientsApplicationFactory: WebApplicationFactory<IAssemblyMarke
 
             var toppings = new List<ToppingEntity>()
             {
-                new ToppingEntity("cheese", "cheese", 0.5d, 10),
-                new ToppingEntity("tomato", "tomato", 0.5d, 100)
+                new ("cheese", "cheese", 0.5d, 10),
+                new ("tomato", "tomato", 0.5d, 100)
             };
             var toppingSub = Substitute.For<IToppingData>();
             toppingSub.GetAsync(Arg.Any<CancellationToken>())
@@ -41,8 +41,8 @@ public class IngredientsApplicationFactory: WebApplicationFactory<IAssemblyMarke
 
             var crusts = new List<CrustEntity>()
             {
-                new CrustEntity("thin9", "Thin",9, 5d, 10),
-                new CrustEntity("deep9", "Deep", 9, 6d, 100)
+                new ("thin9", "Thin",9, 5d, 10),
+                new ("deep9", "Deep", 9, 6d, 100)
             };
             var crustSub = Substitute.For<ICrustData>();
             crustSub.GetAsync(Arg.Any<CancellationToken>())
