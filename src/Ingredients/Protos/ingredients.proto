@@ -7,7 +7,7 @@ package ingredients;
 service ingredientsService {
   
   rpc GetToppings(GetToppingsRequest) returns (GetToppingsResponse); 
-  
+  rpc GetCrusts(GetCrustsRequest) returns (GetCrustsResponse);
 }
 
 message Topping {
@@ -20,4 +20,18 @@ message GetToppingsRequest {};
 
 message GetToppingsResponse {
   repeated Topping toppings = 1;
+};
+
+message Crust {
+  string id = 1;
+  string Name = 2;
+  int32 Size = 3;
+  double Price = 4;
+  int32 StockCount = 5;
+}
+
+message GetCrustsRequest {};
+
+message GetCrustsResponse {
+  repeated Crust crusts = 1;
 };
