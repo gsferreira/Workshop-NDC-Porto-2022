@@ -17,4 +17,8 @@
     <PackageReference Include="Microsoft.Tye.Extensions.Configuration" Version="0.10.0-alpha.21420.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Orders.PubSub\Orders.PubSub.csproj" />
+  </ItemGroup>
+
 </Project>
